@@ -1,13 +1,18 @@
 """Question 31: Largest among three numbers."""  # Executes this statement.
 
 
-def main() -> None:  # Defines a function.
-    first = 24  # Stores a value in variable(s).
-    second = 67  # Stores a value in variable(s).
-    third = 45  # Stores a value in variable(s).
-    largest = max(first, second, third)  # Stores a value in variable(s).
-    print("Largest number:", largest)  # Displays output to the user.
+# Taking input
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+c = int(input("Enter third number: "))
 
+# Checking largest using if-elif-else
+if a >= b and a >= c:
+    largest = a
+elif b >= a and b >= c:
+    largest = b
+else:
+    largest = c
 
-if __name__ == "__main__":  # Checks a condition.
-    main()  # Executes this statement.
+# Output
+print("Largest number is:", largest)

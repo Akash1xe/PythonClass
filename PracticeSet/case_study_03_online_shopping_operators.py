@@ -1,21 +1,29 @@
 """Case study 3: Online shopping cost, discount, and membership eligibility."""  # Executes this statement.
 
 
-def main() -> None:  # Defines a function.
-    quantity = 3  # Stores a value in variable(s).
-    unit_price = 499.0  # Stores a value in variable(s).
-    membership = True  # Stores a value in variable(s).
+# Taking inputs
+price = float(input("Enter product price: "))
+quantity = int(input("Enter quantity: "))
+member = input("Are you a member? (yes/no): ")
 
-    subtotal = quantity * unit_price  # Stores a value in variable(s).
-    discount = subtotal * 0.10 if subtotal >= 1000 else 0.0  # Stores a value in variable(s).
-    if membership and subtotal >= 1500:  # Checks a condition.
-        discount += subtotal * 0.05  # Executes this statement.
-    total = subtotal - discount  # Stores a value in variable(s).
+# Calculating total cost
+total = price * quantity
+print("\nTotal cost before discount:", total)
 
-    print("Subtotal:", subtotal)  # Displays output to the user.
-    print("Discount:", discount)  # Displays output to the user.
-    print("Total payable:", total)  # Displays output to the user.
+# Applying discount
+discount = 0
 
+# Condition 1: total amount discount
+if total > 1000:
+    discount += total * 0.10   # 10% discount
 
-if __name__ == "__main__":  # Checks a condition.
-    main()  # Executes this statement.
+# Condition 2: membership discount
+if member.lower() == "yes":
+    discount += total * 0.05   # extra 5% discount
+
+# Final amount
+final_amount = total - discount
+
+# Output
+print("Total discount:", discount)
+print("Final amount to pay:", final_amount)

@@ -1,19 +1,27 @@
-"""Case study 5: Hospital billing with discount analysis."""  # Executes this statement.
+# Taking input
+consultation = float(input("Enter consultation fee: "))
+medicines = float(input("Enter medicine charges: "))
+room = float(input("Enter room charges: "))
+patient_type = input("Enter patient type (normal/senior): ")
 
+# Calculating total bill
+total = consultation + medicines + room
+print("\nTotal Bill before discount:", total)
 
-def main() -> None:  # Defines a function.
-    consultation = 500.0  # Stores a value in variable(s).
-    medicines = 1200.0  # Stores a value in variable(s).
-    room_charges = 2500.0  # Stores a value in variable(s).
+# Applying discount
+discount = 0
 
-    total_bill = consultation + medicines + room_charges  # Stores a value in variable(s).
-    discount = total_bill * 0.08 if total_bill >= 4000 else 0.0  # Stores a value in variable(s).
-    net_bill = total_bill - discount  # Stores a value in variable(s).
+# Condition 1: High bill discount
+if total > 5000:
+    discount += total * 0.10   # 10%
 
-    print("Total bill:", total_bill)  # Displays output to the user.
-    print("Discount:", discount)  # Displays output to the user.
-    print("Net bill:", net_bill)  # Displays output to the user.
+# Condition 2: Senior citizen discount
+if patient_type.lower() == "senior":
+    discount += total * 0.05   # 5%
 
+# Final bill
+final_bill = total - discount
 
-if __name__ == "__main__":  # Checks a condition.
-    main()  # Executes this statement.
+# Output
+print("Total Discount:", discount)
+print("Final Bill Amount:", final_bill)

@@ -1,30 +1,43 @@
 """Question 29: Basic calculator operations using functions."""  # Executes this statement.
 
+# Function for addition
+def add(a, b):
+    return a + b
 
-def add(a: float, b: float) -> float:  # Defines a function.
-    return a + b  # Returns a value from the function.
+# Function for subtraction
+def subtract(a, b):
+    return a - b
 
+# Function for multiplication
+def multiply(a, b):
+    return a * b
 
-def subtract(a: float, b: float) -> float:  # Defines a function.
-    return a - b  # Returns a value from the function.
+# Function for division
+def divide(a, b):
+    if b == 0:
+        return "Cannot divide by zero"
+    return a / b
 
+# Main program
+print("1. Add\n2. Subtract\n3. Multiply\n4. Divide")
 
-def multiply(a: float, b: float) -> float:  # Defines a function.
-    return a * b  # Returns a value from the function.
+choice = int(input("Enter your choice: "))
 
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
 
-def divide(a: float, b: float) -> float:  # Defines a function.
-    return a / b  # Returns a value from the function.
+# Calling functions based on user choice
+if choice == 1:
+    print("Result:", add(num1, num2))
 
+elif choice == 2:
+    print("Result:", subtract(num1, num2))
 
-def main() -> None:  # Defines a function.
-    first = 12  # Stores a value in variable(s).
-    second = 4  # Stores a value in variable(s).
-    print("Addition:", add(first, second))  # Displays output to the user.
-    print("Subtraction:", subtract(first, second))  # Displays output to the user.
-    print("Multiplication:", multiply(first, second))  # Displays output to the user.
-    print("Division:", divide(first, second))  # Displays output to the user.
+elif choice == 3:
+    print("Result:", multiply(num1, num2))
 
+elif choice == 4:
+    print("Result:", divide(num1, num2))
 
-if __name__ == "__main__":  # Checks a condition.
-    main()  # Executes this statement.
+else:
+    print("Invalid choice")

@@ -10,3 +10,4 @@ def main() -> None:  # Defines a function.
 
 if __name__ == "__main__":  # Checks a condition.
     main()  # Executes this statement.
+w

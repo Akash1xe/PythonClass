@@ -1,17 +1,18 @@
 """Question 30: Check whether a number is even or odd using functions."""  # Executes this statement.
 
 
-def is_even(number: int) -> bool:  # Defines a function.
-    return number % 2 == 0  # Returns a value from the function.
+# Function to check even or odd
+def check_even_odd(num):
+    if num % 2 == 0:
+        return "Even"
+    else:
+        return "Odd"
 
+# Main program
+n = int(input("Enter a number: "))
 
-def main() -> None:  # Defines a function.
-    number = 11  # Stores a value in variable(s).
-    if is_even(number):  # Checks a condition.
-        print("Even")  # Displays output to the user.
-    else:  # Runs when previous conditions are false.
-        print("Odd")  # Displays output to the user.
+# Function call
+result = check_even_odd(n)
 
-
-if __name__ == "__main__":  # Checks a condition.
-    main()  # Executes this statement.
+# Output
+print("The number is:", result)

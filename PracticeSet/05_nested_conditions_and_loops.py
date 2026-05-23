@@ -1,22 +1,25 @@
-"""Question 5: Decision-making with nested conditions and nested loops."""  # Executes this statement.
+# Number of students
+n = int(input("Enter number of students: "))
 
+# Outer loop (for each student)
+for i in range(n):
+    print("\nStudent", i + 1)
 
-def main() -> None:  # Defines a function.
-    for row in range(1, 4):  # Starts a for loop over values.
-        print(f"Row {row}:")  # Displays output to the user.
-        for column in range(1, 4):  # Starts a for loop over values.
-            if row % 2 == 0:  # Checks a condition.
-                if column % 2 == 0:  # Checks a condition.
-                    print(f"  ({row}, {column}) -> even row and even column")  # Displays output to the user.
-                else:  # Runs when previous conditions are false.
-                    print(f"  ({row}, {column}) -> even row and odd column")  # Displays output to the user.
-            else:  # Runs when previous conditions are false.
-                if column % 2 == 0:  # Checks a condition.
-                    print(f"  ({row}, {column}) -> odd row and even column")  # Displays output to the user.
-                else:  # Runs when previous conditions are false.
-                    print(f"  ({row}, {column}) -> odd row and odd column")  # Displays output to the user.
-        print()  # Displays output to the user.
+    # Input marks
+    m1 = int(input("Enter marks in Subject 1: "))
+    m2 = int(input("Enter marks in Subject 2: "))
+    m3 = int(input("Enter marks in Subject 3: "))
 
+    # Calculate average
+    avg = (m1 + m2 + m3) / 3
 
-if __name__ == "__main__":  # Checks a condition.
-    main()  # Executes this statement.
+    # Decision-making with nested conditions
+    if m1 >= 35 and m2 >= 35 and m3 >= 35:
+        if avg >= 75:
+            print("Result: Distinction")
+        elif avg >= 50:
+            print("Result: Pass")
+        else:
+            print("Result: Pass (Low Marks)")
+    else:
+        print("Result: Fail")
